@@ -20,14 +20,14 @@ resource "aws_subnet" "Nginx-PubSub" {
     }
 }
 
-# # create an Internet Gateway for above VPC
-# resource "aws_internet_gateway" "Nginx-IGW" {
-#     vpc_id = aws_vpc.Nginx-Vpc.id
+# create an Internet Gateway for above VPC
+resource "aws_internet_gateway" "Nginx-IGW" {
+    vpc_id = aws_vpc.Nginx-Vpc.id
 
-#     tags = {
-#        Name = "Nginx_IGW"
-#     }
-# }
+    tags = {
+       Name = "Nginx_IGW"
+    }
+}
 
 # # create route table for VPC
 # resource "aws_route_table" "Nginx-PubSub-RT" {
