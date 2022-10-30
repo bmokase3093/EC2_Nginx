@@ -31,10 +31,20 @@ resource "aws_internet_gateway" "Nginx-IGW" {
 
 # create route table for VPC
 resource "aws_route_table" "Nginx-PubSub-RT" {
-    cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.Nginx_IGW
+    vpc_id = aws_vpc.Nginx-Vpc.id
+    route {
+        cidr_block = "0.0.0.0/0"
+        gateway_id = aws_internet_gateway.Nginx-IGW.id
 
+    }
+    
     tags = {
        Name = "Nginx_PubSubRT"
     }
+}
+
+# associate the route table to our pub subnet
+resource "aws_route_table_association" "Nginx-RTA-PubSub" {
+    subnet_id = aws_subnet.Nginx-PubSub.id
+    route_table_id = aws_route_table.Nginx-PubSub-RT.id
 }
