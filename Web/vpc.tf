@@ -9,16 +9,16 @@ resource "aws_vpc" "Nginx-Vpc" {
     }
 }
 
-# # Create single public subnet
-# resource "aws_subnet" "Nginx-PubSub" {
-#     vpc_id                  = aws_vpc.Nginx-Vpc.id
-#     cidr_block              = "10.0.1.0/24"
-#     map_public_ip_on_launch = "true"
+# Create single public subnet
+resource "aws_subnet" "Nginx-PubSub" {
+    vpc_id                  = aws_vpc.Nginx-Vpc.id
+    cidr_block              = "10.0.1.0/24"
+    map_public_ip_on_launch = "true"
 
-#     tags = {
-#         Name = "Nginx_PubSub"
-#     }
-# }
+    tags = {
+        Name = "Nginx_PubSub"
+    }
+}
 
 # # create an Internet Gateway for above VPC
 # resource "aws_internet_gateway" "Nginx-IGW" {
