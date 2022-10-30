@@ -29,12 +29,12 @@ resource "aws_internet_gateway" "Nginx-IGW" {
     }
 }
 
-# # create route table for VPC
-# resource "aws_route_table" "Nginx-PubSub-RT" {
-#     cidr_block = "0.0.0.0/0"
-#     gateway_id = aws_internet_gateway.Nginx_IGW
+# create route table for VPC
+resource "aws_route_table" "Nginx-PubSub-RT" {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.Nginx_IGW
 
-#     tags = {
-#        Name = "Nginx_PubSubRT"
-#     }
-# }
+    tags = {
+       Name = "Nginx_PubSubRT"
+    }
+}
