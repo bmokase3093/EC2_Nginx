@@ -1,0 +1,1 @@
+# create the EC2 that will host Nginx server
