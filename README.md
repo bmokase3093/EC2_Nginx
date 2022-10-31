@@ -3,7 +3,7 @@ Using Terraform to Deploy EC2 that runs nginx web server
 
 ## Important files to run Terraform /Web
 
-| Task | Intro |
+| Filename | What it does |
 | --- | --- |
 | 0. provider.tf | set terraform to use aws and specific region |
 | 1.  vpc.tf! | To create aws VPC/Network |
