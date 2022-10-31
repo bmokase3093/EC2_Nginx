@@ -54,7 +54,7 @@ $ terraform apply --auto-approve # to create the resources under the plan comman
 
 ```
 $ terraform destroy --auto-approve # To shutdown our server so we that we don't incur charges
-``
+```
 ## Authors
 
 Bongani Mokase - [Email](bonganimokase@gmail.com)
